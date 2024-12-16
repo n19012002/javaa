@@ -1,7 +1,10 @@
 <%@ page import="java.util.List" %>
 <%@ page import="model.Product" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page trimDirectiveWhitespaces="true" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
-<html lang="zxx" class="no-js">
+<html lang="vi" class="no-js">
 
 <head>
     <!-- Mobile Specific Meta -->
@@ -188,9 +191,9 @@
                                     <h6 class="l-through">$<%= product.getDiscountPrice() %></h6>
                                 </div>
                                 <div class="prd-bottom">
-                                    <a href="" class="social-info">
+                                    <a href="javascript:void(0)" onclick="addToCart(<%= product.getId() %>, <%= product.getPrice() %>)" class="social-info">
                                         <span class="ti-bag"></span>
-                                        <p class="hover-text">add to bag</p>
+                                        <p class="hover-text">thêm vào giỏ</p>
                                     </a>
                                     <a href="" class="social-info">
                                         <span class="lnr lnr-heart"></span>
@@ -335,6 +338,68 @@
     <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjCGmQ0Uq4exrzdcL6rvxywDDOvfAu6eE"></script>
     <script src="${pageContext.request.contextPath}/static/js/gmaps.min.js"></script>
     <script src="${pageContext.request.contextPath}/static/js/main.js"></script>
+    <script>
+    function addToCart(productId, price) {
+        // Kiểm tra đăng nhập
+        <% if (session.getAttribute("user") == null) { %>
+            if(confirm('Bạn cần đăng nhập để thêm vào giỏ hàng. Đăng nhập ngay?')) {
+                window.location.href = '${pageContext.request.contextPath}/login';
+            }
+            return;
+        <% } %>
+        
+        console.log('Adding to cart:', productId, price);
+        $.ajax({
+            url: '${pageContext.request.contextPath}/cart/add',
+            type: 'POST',
+            data: {
+                productId: productId,
+                price: price
+            },
+            success: function(response) {
+                console.log('Response:', response);
+                if(response.success) {
+                    alert('Đã thêm sản phẩm vào giỏ hàng!');
+                    updateCartCount(response.cartCount);
+                } else {
+                    if(response.error === 'NOT_LOGGED_IN') {
+                        if(confirm('Bạn cần đăng nhập để thêm vào giỏ hàng. Đăng nhập ngay?')) {
+                            window.location.href = '${pageContext.request.contextPath}/login';
+                        }
+                    } else {
+                        alert('Có lỗi xảy ra: ' + (response.message || 'Không thể thêm vào giỏ hàng'));
+                    }
+                }
+            },
+            error: function(xhr, status, error) {
+                console.error('Error:', error);
+                console.error('Status:', status);
+                console.error('Response:', xhr.responseText);
+                try {
+                    var response = JSON.parse(xhr.responseText);
+                    alert('Có lỗi xảy ra: ' + (response.message || 'Không thể thêm vào giỏ hàng'));
+                } catch(e) {
+                    alert('Có lỗi xảy ra khi thêm vào giỏ hàng!');
+                }
+            }
+        });
+    }
+
+    // Hiển thị số lượng sản phẩm trong giỏ hàng khi tải trang
+    $(document).ready(function() {
+        <% if (session.getAttribute("user") != null) { %>
+            $.get('${pageContext.request.contextPath}/cart/count', function(response) {
+                if(response.success) {
+                    updateCartCount(response.cartCount);
+                }
+            });
+        <% } %>
+    });
+
+    function updateCartCount(count) {
+        $('.cart-count').text(count || '0');
+    }
+    </script>
 </body>
 
 </html>

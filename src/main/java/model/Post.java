@@ -16,8 +16,26 @@ public class Post {
     private Timestamp createdAt;
     private int views;
     private int commentsCount;
-     private List<String> tags = new ArrayList<>();
+    private List<String> tags = new ArrayList<>();
 
+    // Constructors
+    public Post() {}
+    
+    public Post(int id, String title, String content, String image, 
+                int authorId, String authorName, int categoryId, 
+                String categoryName, Timestamp createdAt) {
+        this.id = id;
+        this.title = title;
+        this.content = content;
+        this.image = image;
+        this.authorId = authorId;
+        this.authorName = authorName;
+        this.categoryId = categoryId;
+        this.categoryName = categoryName;
+        this.createdAt = createdAt;
+    }
+
+    // Getters and Setters
     public int getId() {
         return id;
     }

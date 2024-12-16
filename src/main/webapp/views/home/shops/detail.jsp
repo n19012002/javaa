@@ -1,3 +1,4 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="zxx" class="no-js">
 
@@ -76,7 +77,7 @@
                         </ul>
                         <p>${product.description}</p>
                         <div class="product_count">
-                            <label for="qty">Quantity:</label>
+                            <label for="qty">Số lượng:</label>
                             <input type="text" name="qty" id="sst" maxlength="12" value="1" title="Quantity:" class="input-text qty">
                             <button onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst )) result.value++;return false;"
                                 class="increase items-count" type="button"><i class="lnr lnr-chevron-up"></i></button>
@@ -84,7 +85,7 @@
                                 class="reduced items-count" type="button"><i class="lnr lnr-chevron-down"></i></button>
                         </div>
                         <div class="card_area d-flex align-items-center">
-                            <a class="primary-btn" href="#">Add to Cart</a>
+                            <a class="primary-btn" href="javascript:void(0)" onclick="addToCart(${product.id}, ${product.price}, document.getElementById('sst').value)">Thêm vào giỏ</a>
                             <a class="icon_btn" href="#"><i class="lnr lnr lnr-diamond"></i></a>
                             <a class="icon_btn" href="#"><i class="lnr lnr lnr-heart"></i></a>
                         </div>
@@ -397,5 +398,74 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjCGmQ0Uq4exrzdcL6rvxywDDOvfAu6eE"></script>
     <script src="${pageContext.request.contextPath}/static/js/gmaps.min.js"></script>
     <script src="${pageContext.request.contextPath}/static/js/main.js"></script>
+    <script>
+    function addToCart(productId, price, quantity) {
+        // Kiểm tra đăng nhập
+        <% if (session.getAttribute("user") == null) { %>
+            if(confirm('Bạn cần đăng nhập để thêm vào giỏ hàng. Đăng nhập ngay?')) {
+                window.location.href = '${pageContext.request.contextPath}/login';
+            }
+            return;
+        <% } %>
+        
+        // Chuyển đổi quantity từ string sang number
+        quantity = parseInt(quantity);
+        if (isNaN(quantity) || quantity < 1) {
+            alert('Vui lòng nhập số lượng hợp lệ');
+            return;
+        }
+        
+        console.log('Adding to cart:', productId, price, quantity);
+        $.ajax({
+            url: '${pageContext.request.contextPath}/cart/add',
+            type: 'POST',
+            data: {
+                productId: productId,
+                price: price,
+                quantity: quantity
+            },
+            success: function(response) {
+                console.log('Response:', response);
+                if(response.success) {
+                    alert('Đã thêm ' + quantity + ' sản phẩm vào giỏ hàng!');
+                    updateCartCount(response.cartCount);
+                } else {
+                    if(response.error === 'NOT_LOGGED_IN') {
+                        if(confirm('Bạn cần đăng nhập để thêm vào giỏ hàng. Đăng nhập ngay?')) {
+                            window.location.href = '${pageContext.request.contextPath}/login';
+                        }
+                    } else {
+                        alert('Có lỗi xảy ra: ' + (response.message || 'Không thể thêm vào giỏ hàng'));
+                    }
+                }
+            },
+            error: function(xhr, status, error) {
+                console.error('Error:', error);
+                console.error('Status:', status);
+                console.error('Response:', xhr.responseText);
+                try {
+                    var response = JSON.parse(xhr.responseText);
+                    alert('Có lỗi xảy ra: ' + (response.message || 'Không thể thêm vào giỏ hàng'));
+                } catch(e) {
+                    alert('Có lỗi xảy ra khi thêm vào giỏ hàng!');
+                }
+            }
+        });
+    }
+
+    $(document).ready(function() {
+        <% if (session.getAttribute("user") != null) { %>
+            $.get('${pageContext.request.contextPath}/cart/count', function(response) {
+                if(response.success) {
+                    updateCartCount(response.cartCount);
+                }
+            });
+        <% } %>
+    });
+
+    function updateCartCount(count) {
+        $('.cart-count').text(count || '0');
+    }
+    </script>
 </body>
 </html>

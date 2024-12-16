@@ -12,6 +12,7 @@ import java.io.IOException;
 @WebFilter("/*")
 public class AuthenticationFilter implements Filter {
     private static final String[] PUBLIC_URLS = {
+    	"/static",
         "/login", 
         "/register",
         "/HomeServlet",
@@ -24,7 +25,8 @@ public class AuthenticationFilter implements Filter {
         "/ProductServlet",
         "/DetailProductServlet",
         "/BlogServlet",
-        "/postDetail"
+        "/postDetail",
+        "/uploads"
     };
 
     @Override
