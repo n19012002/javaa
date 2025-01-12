@@ -6,10 +6,8 @@
             <div class="row justify-content-center">
                 <div class="col-lg-6 text-center">
                     <div class="section-title">
-                        <h1>Latest Products</h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                            dolore
-                            magna aliqua.</p>
+                        <h1>Sản phẩm mới nhất</h1>
+                        <p>Khám phá những mẫu giày mới nhất với thiết kế độc đáo và chất lượng hàng đầu.</p>
                     </div>
                 </div>
             </div>
@@ -19,29 +17,29 @@
                     <div class="single-product">
                         <img class="img-fluid" src="${pageContext.request.contextPath}/static/img/product/p1.jpg" alt="">
                         <div class="product-details">
-                            <h6>addidas New Hammer sole
-                                for Sports person</h6>
+                            <h6>Giày thể thao Adidas
+                                dành cho người chơi thể thao</h6>
                             <div class="price">
-                                <h6>$150.00</h6>
-                                <h6 class="l-through">$210.00</h6>
+                                <h6>3.750.000đ</h6>
+                                <h6 class="l-through">5.250.000đ</h6>
                             </div>
                             <div class="prd-bottom">
 
                                 <a href="" class="social-info">
                                     <span class="ti-bag"></span>
-                                    <p class="hover-text">add to bag</p>
+                                    <p class="hover-text">thêm vào giỏ</p>
                                 </a>
                                 <a href="" class="social-info">
                                     <span class="lnr lnr-heart"></span>
-                                    <p class="hover-text">Wishlist</p>
+                                    <p class="hover-text">yêu thích</p>
                                 </a>
                                 <a href="" class="social-info">
                                     <span class="lnr lnr-sync"></span>
-                                    <p class="hover-text">compare</p>
+                                    <p class="hover-text">so sánh</p>
                                 </a>
                                 <a href="" class="social-info">
                                     <span class="lnr lnr-move"></span>
-                                    <p class="hover-text">view more</p>
+                                    <p class="hover-text">xem thêm</p>
                                 </a>
                             </div>
                         </div>
@@ -52,29 +50,29 @@
                     <div class="single-product">
                         <img class="img-fluid" src="${pageContext.request.contextPath}/static/img/product/p2.jpg" alt="">
                         <div class="product-details">
-                            <h6>addidas New Hammer sole
-                                for Sports person</h6>
+                            <h6>Giày thể thao Adidas
+                                dành cho người chơi thể thao</h6>
                             <div class="price">
-                                <h6>$150.00</h6>
-                                <h6 class="l-through">$210.00</h6>
+                                <h6>3.750.000đ</h6>
+                                <h6 class="l-through">5.250.000đ</h6>
                             </div>
                             <div class="prd-bottom">
 
                                 <a href="" class="social-info">
                                     <span class="ti-bag"></span>
-                                    <p class="hover-text">add to bag</p>
+                                    <p class="hover-text">thêm vào giỏ</p>
                                 </a>
                                 <a href="" class="social-info">
                                     <span class="lnr lnr-heart"></span>
-                                    <p class="hover-text">Wishlist</p>
+                                    <p class="hover-text">yêu thích</p>
                                 </a>
                                 <a href="" class="social-info">
                                     <span class="lnr lnr-sync"></span>
-                                    <p class="hover-text">compare</p>
+                                    <p class="hover-text">so sánh</p>
                                 </a>
                                 <a href="" class="social-info">
                                     <span class="lnr lnr-move"></span>
-                                    <p class="hover-text">view more</p>
+                                    <p class="hover-text">xem thêm</p>
                                 </a>
                             </div>
                         </div>
@@ -85,28 +83,28 @@
                     <div class="single-product">
                         <img class="img-fluid" src="${pageContext.request.contextPath}/static/img/product/p3.jpg" alt="">
                         <div class="product-details">
-                            <h6>addidas New Hammer sole
-                                for Sports person</h6>
+                            <h6>Giày thể thao Adidas
+                                dành cho người chơi thể thao</h6>
                             <div class="price">
-                                <h6>$150.00</h6>
-                                <h6 class="l-through">$210.00</h6>
+                                <h6>3.750.000đ</h6>
+                                <h6 class="l-through">5.250.000đ</h6>
                             </div>
                             <div class="prd-bottom">
                                 <a href="" class="social-info">
                                     <span class="ti-bag"></span>
-                                    <p class="hover-text">add to bag</p>
+                                    <p class="hover-text">thêm vào giỏ</p>
                                 </a>
                                 <a href="" class="social-info">
                                     <span class="lnr lnr-heart"></span>
-                                    <p class="hover-text">Wishlist</p>
+                                    <p class="hover-text">yêu thích</p>
                                 </a>
                                 <a href="" class="social-info">
                                     <span class="lnr lnr-sync"></span>
-                                    <p class="hover-text">compare</p>
+                                    <p class="hover-text">so sánh</p>
                                 </a>
                                 <a href="" class="social-info">
                                     <span class="lnr lnr-move"></span>
-                                    <p class="hover-text">view more</p>
+                                    <p class="hover-text">xem thêm</p>
                                 </a>
                             </div>
                         </div>
@@ -117,29 +115,29 @@
                     <div class="single-product">
                         <img class="img-fluid" src="${pageContext.request.contextPath}/static/img/product/p4.jpg" alt="">
                         <div class="product-details">
-                            <h6>addidas New Hammer sole
-                                for Sports person</h6>
+                            <h6>Giày thể thao Adidas
+                                dành cho người chơi thể thao</h6>
                             <div class="price">
-                                <h6>$150.00</h6>
-                                <h6 class="l-through">$210.00</h6>
+                                <h6>3.750.000đ</h6>
+                                <h6 class="l-through">5.250.000đ</h6>
                             </div>
                             <div class="prd-bottom">
 
                                 <a href="" class="social-info">
                                     <span class="ti-bag"></span>
-                                    <p class="hover-text">add to bag</p>
+                                    <p class="hover-text">thêm vào giỏ</p>
                                 </a>
                                 <a href="" class="social-info">
                                     <span class="lnr lnr-heart"></span>
-                                    <p class="hover-text">Wishlist</p>
+                                    <p class="hover-text">yêu thích</p>
                                 </a>
                                 <a href="" class="social-info">
                                     <span class="lnr lnr-sync"></span>
-                                    <p class="hover-text">compare</p>
+                                    <p class="hover-text">so sánh</p>
                                 </a>
                                 <a href="" class="social-info">
                                     <span class="lnr lnr-move"></span>
-                                    <p class="hover-text">view more</p>
+                                    <p class="hover-text">xem thêm</p>
                                 </a>
                             </div>
                         </div>
@@ -150,29 +148,29 @@
                     <div class="single-product">
                         <img class="img-fluid" src="${pageContext.request.contextPath}/static/img/product/p5.jpg" alt="">
                         <div class="product-details">
-                            <h6>addidas New Hammer sole
-                                for Sports person</h6>
+                            <h6>Giày thể thao Adidas
+                                dành cho người chơi thể thao</h6>
                             <div class="price">
-                                <h6>$150.00</h6>
-                                <h6 class="l-through">$210.00</h6>
+                                <h6>3.750.000đ</h6>
+                                <h6 class="l-through">5.250.000đ</h6>
                             </div>
                             <div class="prd-bottom">
 
                                 <a href="" class="social-info">
                                     <span class="ti-bag"></span>
-                                    <p class="hover-text">add to bag</p>
+                                    <p class="hover-text">thêm vào giỏ</p>
                                 </a>
                                 <a href="" class="social-info">
                                     <span class="lnr lnr-heart"></span>
-                                    <p class="hover-text">Wishlist</p>
+                                    <p class="hover-text">yêu thích</p>
                                 </a>
                                 <a href="" class="social-info">
                                     <span class="lnr lnr-sync"></span>
-                                    <p class="hover-text">compare</p>
+                                    <p class="hover-text">so sánh</p>
                                 </a>
                                 <a href="" class="social-info">
                                     <span class="lnr lnr-move"></span>
-                                    <p class="hover-text">view more</p>
+                                    <p class="hover-text">xem thêm</p>
                                 </a>
                             </div>
                         </div>
@@ -183,29 +181,29 @@
                     <div class="single-product">
                         <img class="img-fluid" src="${pageContext.request.contextPath}/static/img/product/p6.jpg" alt="">
                         <div class="product-details">
-                            <h6>addidas New Hammer sole
-                                for Sports person</h6>
+                            <h6>Giày thể thao Adidas
+                                dành cho người chơi thể thao</h6>
                             <div class="price">
-                                <h6>$150.00</h6>
-                                <h6 class="l-through">$210.00</h6>
+                                <h6>3.750.000đ</h6>
+                                <h6 class="l-through">5.250.000đ</h6>
                             </div>
                             <div class="prd-bottom">
 
                                 <a href="" class="social-info">
                                     <span class="ti-bag"></span>
-                                    <p class="hover-text">add to bag</p>
+                                    <p class="hover-text">thêm vào giỏ</p>
                                 </a>
                                 <a href="" class="social-info">
                                     <span class="lnr lnr-heart"></span>
-                                    <p class="hover-text">Wishlist</p>
+                                    <p class="hover-text">yêu thích</p>
                                 </a>
                                 <a href="" class="social-info">
                                     <span class="lnr lnr-sync"></span>
-                                    <p class="hover-text">compare</p>
+                                    <p class="hover-text">so sánh</p>
                                 </a>
                                 <a href="" class="social-info">
                                     <span class="lnr lnr-move"></span>
-                                    <p class="hover-text">view more</p>
+                                    <p class="hover-text">xem thêm</p>
                                 </a>
                             </div>
                         </div>
@@ -216,29 +214,29 @@
                     <div class="single-product">
                         <img class="img-fluid" src="${pageContext.request.contextPath}/static/img/product/p7.jpg" alt="">
                         <div class="product-details">
-                            <h6>addidas New Hammer sole
-                                for Sports person</h6>
+                            <h6>Giày thể thao Adidas
+                                dành cho người chơi thể thao</h6>
                             <div class="price">
-                                <h6>$150.00</h6>
-                                <h6 class="l-through">$210.00</h6>
+                                <h6>3.750.000đ</h6>
+                                <h6 class="l-through">5.250.000đ</h6>
                             </div>
                             <div class="prd-bottom">
 
                                 <a href="" class="social-info">
                                     <span class="ti-bag"></span>
-                                    <p class="hover-text">add to bag</p>
+                                    <p class="hover-text">thêm vào giỏ</p>
                                 </a>
                                 <a href="" class="social-info">
                                     <span class="lnr lnr-heart"></span>
-                                    <p class="hover-text">Wishlist</p>
+                                    <p class="hover-text">yêu thích</p>
                                 </a>
                                 <a href="" class="social-info">
                                     <span class="lnr lnr-sync"></span>
-                                    <p class="hover-text">compare</p>
+                                    <p class="hover-text">so sánh</p>
                                 </a>
                                 <a href="" class="social-info">
                                     <span class="lnr lnr-move"></span>
-                                    <p class="hover-text">view more</p>
+                                    <p class="hover-text">xem thêm</p>
                                 </a>
                             </div>
                         </div>
@@ -249,29 +247,29 @@
                     <div class="single-product">
                         <img class="img-fluid" src="${pageContext.request.contextPath}/static/img/product/p8.jpg" alt="">
                         <div class="product-details">
-                            <h6>addidas New Hammer sole
-                                for Sports person</h6>
+                            <h6>Giày thể thao Adidas
+                                dành cho người chơi thể thao</h6>
                             <div class="price">
-                                <h6>$150.00</h6>
-                                <h6 class="l-through">$210.00</h6>
+                                <h6>3.750.000đ</h6>
+                                <h6 class="l-through">5.250.000đ</h6>
                             </div>
                             <div class="prd-bottom">
 
                                 <a href="" class="social-info">
                                     <span class="ti-bag"></span>
-                                    <p class="hover-text">add to bag</p>
+                                    <p class="hover-text">thêm vào giỏ</p>
                                 </a>
                                 <a href="" class="social-info">
                                     <span class="lnr lnr-heart"></span>
-                                    <p class="hover-text">Wishlist</p>
+                                    <p class="hover-text">yêu thích</p>
                                 </a>
                                 <a href="" class="social-info">
                                     <span class="lnr lnr-sync"></span>
-                                    <p class="hover-text">compare</p>
+                                    <p class="hover-text">so sánh</p>
                                 </a>
                                 <a href="" class="social-info">
                                     <span class="lnr lnr-move"></span>
-                                    <p class="hover-text">view more</p>
+                                    <p class="hover-text">xem thêm</p>
                                 </a>
                             </div>
                         </div>
@@ -286,10 +284,8 @@
             <div class="row justify-content-center">
                 <div class="col-lg-6 text-center">
                     <div class="section-title">
-                        <h1>Coming Products</h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                            dolore
-                            magna aliqua.</p>
+                        <h1>Sản phẩm sắp ra mắt</h1>
+                        <p>Khám phá trước những mẫu giày sắp được ra mắt với công nghệ mới nhất.</p>
                     </div>
                 </div>
             </div>
@@ -299,29 +295,29 @@
                     <div class="single-product">
                         <img class="img-fluid" src="${pageContext.request.contextPath}/static/img/product/p6.jpg" alt="">
                         <div class="product-details">
-                            <h6>addidas New Hammer sole
-                                for Sports person</h6>
+                            <h6>Giày thể thao Adidas
+                                dành cho người chơi thể thao</h6>
                             <div class="price">
-                                <h6>$150.00</h6>
-                                <h6 class="l-through">$210.00</h6>
+                                <h6>3.750.000đ</h6>
+                                <h6 class="l-through">5.250.000đ</h6>
                             </div>
                             <div class="prd-bottom">
 
                                 <a href="" class="social-info">
                                     <span class="ti-bag"></span>
-                                    <p class="hover-text">add to bag</p>
+                                    <p class="hover-text">thêm vào giỏ</p>
                                 </a>
                                 <a href="" class="social-info">
                                     <span class="lnr lnr-heart"></span>
-                                    <p class="hover-text">Wishlist</p>
+                                    <p class="hover-text">yêu thích</p>
                                 </a>
                                 <a href="" class="social-info">
                                     <span class="lnr lnr-sync"></span>
-                                    <p class="hover-text">compare</p>
+                                    <p class="hover-text">so sánh</p>
                                 </a>
                                 <a href="" class="social-info">
                                     <span class="lnr lnr-move"></span>
-                                    <p class="hover-text">view more</p>
+                                    <p class="hover-text">xem thêm</p>
                                 </a>
                             </div>
                         </div>
@@ -332,29 +328,29 @@
                     <div class="single-product">
                         <img class="img-fluid" src="${pageContext.request.contextPath}/static/img/product/p8.jpg" alt="">
                         <div class="product-details">
-                            <h6>addidas New Hammer sole
-                                for Sports person</h6>
+                            <h6>Giày thể thao Adidas
+                                dành cho người chơi thể thao</h6>
                             <div class="price">
-                                <h6>$150.00</h6>
-                                <h6 class="l-through">$210.00</h6>
+                                <h6>3.750.000đ</h6>
+                                <h6 class="l-through">5.250.000đ</h6>
                             </div>
                             <div class="prd-bottom">
 
                                 <a href="" class="social-info">
                                     <span class="ti-bag"></span>
-                                    <p class="hover-text">add to bag</p>
+                                    <p class="hover-text">thêm vào giỏ</p>
                                 </a>
                                 <a href="" class="social-info">
                                     <span class="lnr lnr-heart"></span>
-                                    <p class="hover-text">Wishlist</p>
+                                    <p class="hover-text">yêu thích</p>
                                 </a>
                                 <a href="" class="social-info">
                                     <span class="lnr lnr-sync"></span>
-                                    <p class="hover-text">compare</p>
+                                    <p class="hover-text">so sánh</p>
                                 </a>
                                 <a href="" class="social-info">
                                     <span class="lnr lnr-move"></span>
-                                    <p class="hover-text">view more</p>
+                                    <p class="hover-text">xem thêm</p>
                                 </a>
                             </div>
                         </div>
@@ -365,29 +361,29 @@
                     <div class="single-product">
                         <img class="img-fluid" src="${pageContext.request.contextPath}/static/img/product/p3.jpg" alt="">
                         <div class="product-details">
-                            <h6>addidas New Hammer sole
-                                for Sports person</h6>
+                            <h6>Giày thể thao Adidas
+                                dành cho người chơi thể thao</h6>
                             <div class="price">
-                                <h6>$150.00</h6>
-                                <h6 class="l-through">$210.00</h6>
+                                <h6>3.750.000đ</h6>
+                                <h6 class="l-through">5.250.000đ</h6>
                             </div>
                             <div class="prd-bottom">
 
                                 <a href="" class="social-info">
                                     <span class="ti-bag"></span>
-                                    <p class="hover-text">add to bag</p>
+                                    <p class="hover-text">thêm vào giỏ</p>
                                 </a>
                                 <a href="" class="social-info">
                                     <span class="lnr lnr-heart"></span>
-                                    <p class="hover-text">Wishlist</p>
+                                    <p class="hover-text">yêu thích</p>
                                 </a>
                                 <a href="" class="social-info">
                                     <span class="lnr lnr-sync"></span>
-                                    <p class="hover-text">compare</p>
+                                    <p class="hover-text">so sánh</p>
                                 </a>
                                 <a href="" class="social-info">
                                     <span class="lnr lnr-move"></span>
-                                    <p class="hover-text">view more</p>
+                                    <p class="hover-text">xem thêm</p>
                                 </a>
                             </div>
                         </div>
@@ -398,29 +394,29 @@
                     <div class="single-product">
                         <img class="img-fluid" src="${pageContext.request.contextPath}/static/img/product/p5.jpg" alt="">
                         <div class="product-details">
-                            <h6>addidas New Hammer sole
-                                for Sports person</h6>
+                            <h6>Giày thể thao Adidas
+                                dành cho người chơi thể thao</h6>
                             <div class="price">
-                                <h6>$150.00</h6>
-                                <h6 class="l-through">$210.00</h6>
+                                <h6>3.750.000đ</h6>
+                                <h6 class="l-through">5.250.000đ</h6>
                             </div>
                             <div class="prd-bottom">
 
                                 <a href="" class="social-info">
                                     <span class="ti-bag"></span>
-                                    <p class="hover-text">add to bag</p>
+                                    <p class="hover-text">thêm vào giỏ</p>
                                 </a>
                                 <a href="" class="social-info">
                                     <span class="lnr lnr-heart"></span>
-                                    <p class="hover-text">Wishlist</p>
+                                    <p class="hover-text">yêu thích</p>
                                 </a>
                                 <a href="" class="social-info">
                                     <span class="lnr lnr-sync"></span>
-                                    <p class="hover-text">compare</p>
+                                    <p class="hover-text">so sánh</p>
                                 </a>
                                 <a href="" class="social-info">
                                     <span class="lnr lnr-move"></span>
-                                    <p class="hover-text">view more</p>
+                                    <p class="hover-text">xem thêm</p>
                                 </a>
                             </div>
                         </div>
@@ -431,29 +427,29 @@
                     <div class="single-product">
                         <img class="img-fluid" src="${pageContext.request.contextPath}/static/img/product/p1.jpg" alt="">
                         <div class="product-details">
-                            <h6>addidas New Hammer sole
-                                for Sports person</h6>
+                            <h6>Giày thể thao Adidas
+                                dành cho người chơi thể thao</h6>
                             <div class="price">
-                                <h6>$150.00</h6>
-                                <h6 class="l-through">$210.00</h6>
+                                <h6>3.750.000đ</h6>
+                                <h6 class="l-through">5.250.000đ</h6>
                             </div>
                             <div class="prd-bottom">
 
                                 <a href="" class="social-info">
                                     <span class="ti-bag"></span>
-                                    <p class="hover-text">add to bag</p>
+                                    <p class="hover-text">thêm vào giỏ</p>
                                 </a>
                                 <a href="" class="social-info">
                                     <span class="lnr lnr-heart"></span>
-                                    <p class="hover-text">Wishlist</p>
+                                    <p class="hover-text">yêu thích</p>
                                 </a>
                                 <a href="" class="social-info">
                                     <span class="lnr lnr-sync"></span>
-                                    <p class="hover-text">compare</p>
+                                    <p class="hover-text">so sánh</p>
                                 </a>
                                 <a href="" class="social-info">
                                     <span class="lnr lnr-move"></span>
-                                    <p class="hover-text">view more</p>
+                                    <p class="hover-text">xem thêm</p>
                                 </a>
                             </div>
                         </div>
@@ -464,29 +460,29 @@
                     <div class="single-product">
                         <img class="img-fluid" src="${pageContext.request.contextPath}/static/img/product/p4.jpg" alt="">
                         <div class="product-details">
-                            <h6>addidas New Hammer sole
-                                for Sports person</h6>
+                            <h6>Giày thể thao Adidas
+                                dành cho người chơi thể thao</h6>
                             <div class="price">
-                                <h6>$150.00</h6>
-                                <h6 class="l-through">$210.00</h6>
+                                <h6>3.750.000đ</h6>
+                                <h6 class="l-through">5.250.000đ</h6>
                             </div>
                             <div class="prd-bottom">
 
                                 <a href="" class="social-info">
                                     <span class="ti-bag"></span>
-                                    <p class="hover-text">add to bag</p>
+                                    <p class="hover-text">thêm vào giỏ</p>
                                 </a>
                                 <a href="" class="social-info">
                                     <span class="lnr lnr-heart"></span>
-                                    <p class="hover-text">Wishlist</p>
+                                    <p class="hover-text">yêu thích</p>
                                 </a>
                                 <a href="" class="social-info">
                                     <span class="lnr lnr-sync"></span>
-                                    <p class="hover-text">compare</p>
+                                    <p class="hover-text">so sánh</p>
                                 </a>
                                 <a href="" class="social-info">
                                     <span class="lnr lnr-move"></span>
-                                    <p class="hover-text">view more</p>
+                                    <p class="hover-text">xem thêm</p>
                                 </a>
                             </div>
                         </div>
@@ -497,29 +493,29 @@
                     <div class="single-product">
                         <img class="img-fluid" src="${pageContext.request.contextPath}/static/img/product/p1.jpg" alt="">
                         <div class="product-details">
-                            <h6>addidas New Hammer sole
-                                for Sports person</h6>
+                            <h6>Giày thể thao Adidas
+                                dành cho người chơi thể thao</h6>
                             <div class="price">
-                                <h6>$150.00</h6>
-                                <h6 class="l-through">$210.00</h6>
+                                <h6>3.750.000đ</h6>
+                                <h6 class="l-through">5.250.000đ</h6>
                             </div>
                             <div class="prd-bottom">
 
                                 <a href="" class="social-info">
                                     <span class="ti-bag"></span>
-                                    <p class="hover-text">add to bag</p>
+                                    <p class="hover-text">thêm vào giỏ</p>
                                 </a>
                                 <a href="" class="social-info">
                                     <span class="lnr lnr-heart"></span>
-                                    <p class="hover-text">Wishlist</p>
+                                    <p class="hover-text">yêu thích</p>
                                 </a>
                                 <a href="" class="social-info">
                                     <span class="lnr lnr-sync"></span>
-                                    <p class="hover-text">compare</p>
+                                    <p class="hover-text">so sánh</p>
                                 </a>
                                 <a href="" class="social-info">
                                     <span class="lnr lnr-move"></span>
-                                    <p class="hover-text">view more</p>
+                                    <p class="hover-text">xem thêm</p>
                                 </a>
                             </div>
                         </div>
@@ -530,29 +526,29 @@
                     <div class="single-product">
                         <img class="img-fluid" src="${pageContext.request.contextPath}/static/img/product/p8.jpg" alt="">
                         <div class="product-details">
-                            <h6>addidas New Hammer sole
-                                for Sports person</h6>
+                            <h6>Giày thể thao Adidas
+                                dành cho người chơi thể thao</h6>
                             <div class="price">
-                                <h6>$150.00</h6>
-                                <h6 class="l-through">$210.00</h6>
+                                <h6>3.750.000đ</h6>
+                                <h6 class="l-through">5.250.000đ</h6>
                             </div>
                             <div class="prd-bottom">
 
                                 <a href="" class="social-info">
                                     <span class="ti-bag"></span>
-                                    <p class="hover-text">add to bag</p>
+                                    <p class="hover-text">thêm vào giỏ</p>
                                 </a>
                                 <a href="" class="social-info">
                                     <span class="lnr lnr-heart"></span>
-                                    <p class="hover-text">Wishlist</p>
+                                    <p class="hover-text">yêu thích</p>
                                 </a>
                                 <a href="" class="social-info">
                                     <span class="lnr lnr-sync"></span>
-                                    <p class="hover-text">compare</p>
+                                    <p class="hover-text">so sánh</p>
                                 </a>
                                 <a href="" class="social-info">
                                     <span class="lnr lnr-move"></span>
-                                    <p class="hover-text">view more</p>
+                                    <p class="hover-text">xem thêm</p>
                                 </a>
                             </div>
                         </div>

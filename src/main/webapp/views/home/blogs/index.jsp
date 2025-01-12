@@ -1,3 +1,4 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="java.util.List" %>
 <%@ page import="model.Post" %>
 <%@ page import="model.Category" %>
@@ -13,7 +14,7 @@
 %>
 
 <!DOCTYPE html>
-<html lang="zxx" class="no-js">
+<html lang="vi" class="no-js">
 <head>
     <!-- Mobile Specific Meta -->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -28,7 +29,7 @@
     <!-- meta character set -->
     <meta charset="UTF-8">
     <!-- Site Title -->
-    <title>Blog</title>
+    <title>Tin tức</title>
 
     <!--
         CSS
@@ -53,10 +54,10 @@
         <div class="container">
             <div class="breadcrumb-banner d-flex flex-wrap align-items-center justify-content-end">
                 <div class="col-first">
-                    <h1>Blog Page</h1>
+                    <h1>Tin tức</h1>
                     <nav class="d-flex align-items-center">
-                        <a href="index.html">Home<span class="lnr lnr-arrow-right"></span></a>
-                        <a href="category.html">Blog</a>
+                        <a href="${pageContext.request.contextPath}/home">Trang chủ<span class="lnr lnr-arrow-right"></span></a>
+                        <a href="#">Tin tức</a>
                     </nav>
                 </div>
             </div>
@@ -80,7 +81,7 @@
                                     <h5><%= category.getName() %></h5>
                                 </a>
                                 <div class="border_line"></div>
-                                <p>Enjoy your <%= category.getName() %> together</p>
+                                <p>Khám phá <%= category.getName() %></p>
                             </div>
                         </div>
                     </div>
@@ -102,7 +103,6 @@
                         <%
                             List<Post> posts = (List<Post>) request.getAttribute("posts");
                             if (posts == null) {
-                                // Nếu không có posts, lấy tất cả các bài viết
                                 posts = (List<Post>) application.getAttribute("allPosts");
                             }
                             for (Post post : posts) {
@@ -115,7 +115,7 @@
                                             if (post.getTags() != null) {
                                                 for (String tag : post.getTags()) {
                                         %>
-                                        <a href="tag?id=<%= tag %>"><%= tag %>,</a>
+                                        <a href="tag?id=<%= tag %>"><%= tag %></a>
                                         <%
                                                 }
                                             }
@@ -124,8 +124,8 @@
                                     <ul class="blog_meta list">
                                         <li><a href="#"><%= post.getAuthorName() %><i class="lnr lnr-user"></i></a></li>
                                         <li><a href="#"><%= post.getCreatedAt() %><i class="lnr lnr-calendar-full"></i></a></li>
-                                        <li><a href="#"><%= post.getViews() %> Views<i class="lnr lnr-eye"></i></a></li>
-                                        <li><a href="#"><%= post.getCommentsCount() %> Comments<i class="lnr lnr-bubble"></i></a></li>
+                                        <li><a href="#"><%= post.getViews() %> Lượt xem<i class="lnr lnr-eye"></i></a></li>
+                                        <li><a href="#"><%= post.getCommentsCount() %> Bình luận<i class="lnr lnr-bubble"></i></a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -137,7 +137,7 @@
                                             <h2><%= post.getTitle() %></h2>
                                         </a>
                                         <p><%= post.getContent() %></p>
-                                        <a href="postDetail?id=<%= post.getId() %>" class="white_bg_btn">View More</a>
+                                        <a href="postDetail?id=<%= post.getId() %>" class="white_bg_btn">Xem thêm</a>
                                     </div>
                                 </div>
                             </div>
@@ -168,18 +168,18 @@
                             <form action="#">
                                 <div class="form-group">
                                     <div class="input-group mb-3">
-                                        <input type="text" class="form-control" placeholder="Search Keyword">
+                                        <input type="text" class="form-control" placeholder="Tìm kiếm">
                                         <div class="input-group-append">
                                             
                                         </div>
                                     </div>
                                 </div>
-                                <button class="primary-btn" type="submit">Search</button>
+                                <button class="primary-btn" type="submit">Tìm kiếm</button>
                             </form>
                         </aside>
 
                         <aside class="single_sidebar_widget post_category_widget">
-                            <h4 class="widget_title">Post Categories</h4>
+                            <h4 class="widget_title">Danh mục bài viết</h4>
                             <ul class="list cat-list">
                                 <%
                                     for (Category category : categories) {
@@ -197,47 +197,47 @@
                         </aside>
 
                         <aside class="single_sidebar_widget popular_post_widget">
-                            <h3 class="widget_title">Popular Posts</h3>
+                            <h3 class="widget_title">Bài viết nổi bật</h3>
                             <div class="media post_item">
                                 <img src="${pageContext.request.contextPath}/static/img/blog/popular-post/post1.jpg" alt="post">
                                 <div class="media-body">
                                     <a href="postDetail?id=1">
-                                        <h3>Space The Final Frontier</h3>
+                                        <h3>Xu hướng giày thể thao 2024</h3>
                                     </a>
-                                    <p>02 Hours ago</p>
+                                    <p>2 giờ trước</p>
                                 </div>
                             </div>
                             <div class="media post_item">
                                 <img src="${pageContext.request.contextPath}/static/img/blog/popular-post/post2.jpg" alt="post">
                                 <div class="media-body">
                                     <a href="postDetail?id=2">
-                                        <h3>The Amazing Hubble</h3>
+                                        <h3>Cách chọn giày phù hợp</h3>
                                     </a>
-                                    <p>02 Hours ago</p>
+                                    <p>2 giờ trước</p>
                                 </div>
                             </div>
                             <div class="media post_item">
                                 <img src="${pageContext.request.contextPath}/static/img/blog/popular-post/post3.jpg" alt="post">
                                 <div class="media-body">
                                     <a href="postDetail?id=3">
-                                        <h3>Astronomy Or Astrology</h3>
+                                        <h3>Bảo quản giày đúng cách</h3>
                                     </a>
-                                    <p>03 Hours ago</p>
+                                    <p>3 giờ trước</p>
                                 </div>
                             </div>
                             <div class="media post_item">
                                 <img src="${pageContext.request.contextPath}/static/img/blog/popular-post/post4.jpg" alt="post">
                                 <div class="media-body">
                                     <a href="postDetail?id=4">
-                                        <h3>Asteroids telescope</h3>
+                                        <h3>Phối đồ với giày thể thao</h3>
                                     </a>
-                                    <p>01 Hours ago</p>
+                                    <p>1 giờ trước</p>
                                 </div>
                             </div>
                         </aside>
 
                         <aside class="single_sidebar_widget tag_cloud_widget">
-                            <h4 class="widget_title">Tag Clouds</h4>
+                            <h4 class="widget_title">Thẻ</h4>
                             <ul class="list">
                                 <%
                                     for (Tag tag : tags) {
@@ -260,49 +260,49 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-2 col-md-6 single-footer-widget">
-                    <h4>Top Products</h4>
+                    <h4>Sản phẩm hàng đầu</h4>
                     <ul>
-                        <li><a href="#">Managed Website</a></li>
-                        <li><a href="#">Manage Reputation</a></li>
-                        <li><a href="#">Power Tools</a></li>
-                        <li><a href="#">Marketing Service</a></li>
+                        <li><a href="#">Quản lý website</a></li>
+                        <li><a href="#">Quản lý danh tiếng</a></li>
+                        <li><a href="#">Công cụ quản lý</a></li>
+                        <li><a href="#">Dịch vụ marketing</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-2 col-md-6 single-footer-widget">
-                    <h4>Quick Links</h4>
+                    <h4>Liên kết nhanh</h4>
                     <ul>
-                        <li><a href="#">Jobs</a></li>
-                        <li><a href="#">Brand Assets</a></li>
-                        <li><a href="#">Investor Relations</a></li>
-                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Việc làm</a></li>
+                        <li><a href="#">Thương hiệu</a></li>
+                        <li><a href="#">Quan hệ đầu tư</a></li>
+                        <li><a href="#">Điều khoản dịch vụ</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-2 col-md-6 single-footer-widget">
-                    <h4>Features</h4>
+                    <h4>Tính năng</h4>
                     <ul>
-                        <li><a href="#">Jobs</a></li>
-                        <li><a href="#">Brand Assets</a></li>
-                        <li><a href="#">Investor Relations</a></li>
-                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Việc làm</a></li>
+                        <li><a href="#">Thương hiệu</a></li>
+                        <li><a href="#">Quan hệ đầu tư</a></li>
+                        <li><a href="#">Điều khoản dịch vụ</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-2 col-md-6 single-footer-widget">
-                    <h4>Resources</h4>
+                    <h4>Tài nguyên</h4>
                     <ul>
-                        <li><a href="#">Guides</a></li>
-                        <li><a href="#">Research</a></li>
-                        <li><a href="#">Experts</a></li>
-                        <li><a href="#">Agencies</a></li>
+                        <li><a href="#">Hướng dẫn</a></li>
+                        <li><a href="#">Nghiên cứu</a></li>
+                        <li><a href="#">Chuyên gia</a></li>
+                        <li><a href="#">Đại lý</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-4 col-md-6 single-footer-widget">
-                    <h4>Newsletter</h4>
-                    <p>You can trust us. we only send promo offers,</p>
+                    <h4>Bản tin</h4>
+                    <p>Bạn có thể tin tưởng chúng tôi. Chúng tôi chỉ gửi các ưu đãi khuyến mãi</p>
                     <div class="form-wrap" id="mc_embed_signup">
                         <form target="_blank" action="https://spondonit.us12.list-manage.com/subscribe/post?u=72f5e7f3c6e6f8a0b6e0e3e6e&amp;id=6156c5a23e"
                               method="get" class="form-inline">
-                            <input class="form-control" name="EMAIL" placeholder="Your Email Address" onfocus="this.placeholder = ''"
-                                   onblur="this.placeholder = 'Your Email Address '" required="" type="email">
+                            <input class="form-control" name="EMAIL" placeholder="Địa chỉ email của bạn" onfocus="this.placeholder = ''"
+                                   onblur="this.placeholder = 'Địa chỉ email của bạn'" required="" type="email">
                             <button class="click-btn btn btn-default"><i class="fa fa-long-arrow-right" aria-hidden="true"></i></button>
                             <div style="position: absolute; left: -5000px;">
                                 <input name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" value="" type="text">
@@ -316,8 +316,8 @@
             <div class="footer-bottom row align-items-center justify-content-between">
                 <p class="footer-text m-0 col-lg-8 col-md-12">
                     <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                    Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o"
-                                                                                                                                                    aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                    Copyright &copy;<script>document.write(new Date().getFullYear());</script> Bản quyền thuộc về | Template được thiết kế bởi <i class="fa fa-heart-o"
+                                                                                                                                                    aria-hidden="true"></i> <a href="https://colorlib.com" target="_blank">Colorlib</a>
                     <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                 </p>
                 <div class="col-lg-4 col-md-12 footer-social">

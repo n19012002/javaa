@@ -12,11 +12,11 @@
 						<div class="row single-slide align-items-center d-flex">
 							<div class="col-lg-5 col-md-6">
 								<div class="banner-content">
-									<h1>Nike New <br>Collection!</h1>
-									<p>XIn chào em</p>
+									<h1>Bộ sưu tập Nike <br>Mới nhất!</h1>
+									<p>Khám phá ngay bộ sưu tập giày mới nhất từ Nike với thiết kế độc đáo</p>
 									<div class="add-bag d-flex align-items-center">
 										<a class="add-btn" href=""><span class="lnr lnr-cross"></span></a>
-										<span class="add-text text-uppercase">Add to Bag</span>
+										<span class="add-text text-uppercase">Thêm vào giỏ</span>
 									</div>
 								</div>
 							</div>
@@ -30,12 +30,11 @@
 						<div class="row single-slide">
 							<div class="col-lg-5">
 								<div class="banner-content">
-									<h1>Nike New <br>Collection!</h1>
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-										dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+									<h1>Bộ sưu tập Nike <br>Mới nhất!</h1>
+									<p>Khám phá những mẫu giày thể thao mới nhất từ Nike với công nghệ tiên tiến và thiết kế hiện đại, mang lại trải nghiệm tuyệt vời cho người dùng.</p>
 									<div class="add-bag d-flex align-items-center">
 										<a class="add-btn" href=""><span class="lnr lnr-cross"></span></a>
-										<span class="add-text text-uppercase">Add to Bag</span>
+										<span class="add-text text-uppercase">Thêm vào giỏ</span>
 									</div>
 								</div>
 							</div>

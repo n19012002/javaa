@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="zxx" class="no-js">
+<html lang="vi" class="no-js">
 
 <head>
     <!-- Mobile Specific Meta -->
@@ -16,7 +16,7 @@
     <!-- meta character set -->
     <meta charset="UTF-8">
     <!-- Site Title -->
-    <title>Karma Shop</title>
+    <title>Chi tiết sản phẩm</title>
     <!-- CSS -->
     <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/linearicons.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/font-awesome.min.css">
@@ -38,11 +38,11 @@
         <div class="container">
             <div class="breadcrumb-banner d-flex flex-wrap align-items-center justify-content-end">
                 <div class="col-first">
-                    <h1>Product Details Page</h1>
+                    <h1>Chi tiết sản phẩm</h1>
                     <nav class="d-flex align-items-center">
-                        <a href="index.html">Home<span class="lnr lnr-arrow-right"></span></a>
-                        <a href="#">Shop<span class="lnr lnr-arrow-right"></span></a>
-                        <a href="single-product.html">product-details</a>
+                        <a href="${pageContext.request.contextPath}/">Trang chủ<span class="lnr lnr-arrow-right"></span></a>
+                        <a href="${pageContext.request.contextPath}/ProductServlet">Cửa hàng<span class="lnr lnr-arrow-right"></span></a>
+                        <a href="#">Chi tiết sản phẩm</a>
                     </nav>
                 </div>
             </div>
@@ -70,15 +70,15 @@
                 <div class="col-lg-5 offset-lg-1">
                     <div class="s_product_text">
                         <h3>${product.name}</h3>
-                        <h2>$${product.price}</h2>
+                        <h2><%= String.format("%,.0fđ", ((model.Product)request.getAttribute("product")).getPrice()) %></h2>
                         <ul class="list">
-                            <li><a class="active" href="#"><span>Category</span> : ${categoryName}</a></li>
-                            <li><a href="#"><span>Availibility</span> : In Stock</a></li>
+                            <li><a class="active" href="#"><span>Danh mục</span> : ${categoryName}</a></li>
+                            <li><a href="#"><span>Tình trạng</span> : Còn hàng</a></li>
                         </ul>
                         <p>${product.description}</p>
                         <div class="product_count">
                             <label for="qty">Số lượng:</label>
-                            <input type="text" name="qty" id="sst" maxlength="12" value="1" title="Quantity:" class="input-text qty">
+                            <input type="text" name="qty" id="sst" maxlength="12" value="1" title="Số lượng:" class="input-text qty">
                             <button onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst )) result.value++;return false;"
                                 class="increase items-count" type="button"><i class="lnr lnr-chevron-up"></i></button>
                             <button onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst ) &amp;&amp; sst > 0 ) result.value--;return false;"
@@ -101,19 +101,19 @@
         <div class="container">
             <ul class="nav nav-tabs" id="myTab" role="tablist">
                 <li class="nav-item">
-                    <a class="nav-link" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Description</a>
+                    <a class="nav-link" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Mô tả</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile"
-                        aria-selected="false">Specification</a>
+                        aria-selected="false">Thông số kỹ thuật</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact"
-                        aria-selected="false">Comments</a>
+                        aria-selected="false">Bình luận</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link active" id="review-tab" data-toggle="tab" href="#review" role="tab" aria-controls="review"
-                        aria-selected="false">Reviews</a>
+                        aria-selected="false">Đánh giá</a>
                 </li>
             </ul>
             <div class="tab-content" id="myTabContent">
@@ -126,7 +126,7 @@
                             <tbody>
                                 <tr>
                                     <td>
-                                        <h5>Width</h5>
+                                        <h5>Chiều rộng</h5>
                                     </td>
                                     <td>
                                         <h5>128mm</h5>
@@ -134,7 +134,7 @@
                                 </tr>
                                 <tr>
                                     <td>
-                                        <h5>Height</h5>
+                                        <h5>Chiều cao</h5>
                                     </td>
                                     <td>
                                         <h5>508mm</h5>
@@ -142,7 +142,7 @@
                                 </tr>
                                 <tr>
                                     <td>
-                                        <h5>Depth</h5>
+                                        <h5>Chiều sâu</h5>
                                     </td>
                                     <td>
                                         <h5>85mm</h5>
@@ -150,42 +150,42 @@
                                 </tr>
                                 <tr>
                                     <td>
-                                        <h5>Weight</h5>
+                                        <h5>Trọng lượng</h5>
                                     </td>
                                     <td>
-                                        <h5>52gm</h5>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <h5>Quality checking</h5>
-                                    </td>
-                                    <td>
-                                        <h5>yes</h5>
+                                        <h5>52g</h5>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>
-                                        <h5>Freshness Duration</h5>
+                                        <h5>Kiểm tra chất lượng</h5>
                                     </td>
                                     <td>
-                                        <h5>03days</h5>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <h5>When packeting</h5>
-                                    </td>
-                                    <td>
-                                        <h5>Without touch of hand</h5>
+                                        <h5>Có</h5>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>
-                                        <h5>Each Box contains</h5>
+                                        <h5>Thời gian bảo hành</h5>
                                     </td>
                                     <td>
-                                        <h5>60pcs</h5>
+                                        <h5>12 tháng</h5>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <h5>Đóng gói</h5>
+                                    </td>
+                                    <td>
+                                        <h5>Hộp carton</h5>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <h5>Phụ kiện kèm theo</h5>
+                                    </td>
+                                    <td>
+                                        <h5>Hộp, sách hướng dẫn</h5>
                                     </td>
                                 </tr>
                             </tbody>
@@ -205,42 +205,42 @@
                                                 <img src="${pageContext.request.contextPath}/static/img/product/review-1.png" alt="">
                                             </div>
                                             <div class="media-body">
-                                                <h4>${comment.authorName}</h4> <!-- Hiển thị tên tác giả -->
-                                                <h5>${comment.createdAt}</h5> <!-- Hiển thị ngày tạo -->
-                                                <a class="reply_btn" href="#">Reply</a>
+                                                <h4>${comment.authorName}</h4>
+                                                <h5>${comment.createdAt}</h5>
+                                                <a class="reply_btn" href="#">Trả lời</a>
                                             </div>
                                         </div>
-                                        <p>${comment.content}</p> <!-- Hiển thị nội dung bình luận -->
+                                        <p>${comment.content}</p>
                                     </div>
                                 </c:forEach>
                             </div>
                         </div>
                         <div class="col-lg-6">
                             <div class="review_box">
-                                <h4>Post a comment</h4>
+                                <h4>Viết bình luận</h4>
                                 <form class="row contact_form" action="contact_process.php" method="post" id="contactForm" novalidate="novalidate">
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <input type="text" class="form-control" id="name" name="name" placeholder="Your Full name">
+                                            <input type="text" class="form-control" id="name" name="name" placeholder="Họ và tên">
                                         </div>
                                     </div>
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <input type="email" class="form-control" id="email" name="email" placeholder="Email Address">
+                                            <input type="email" class="form-control" id="email" name="email" placeholder="Địa chỉ email">
                                         </div>
                                     </div>
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <input type="text" class="form-control" id="number" name="number" placeholder="Phone Number">
+                                            <input type="text" class="form-control" id="number" name="number" placeholder="Số điện thoại">
                                         </div>
                                     </div>
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <textarea class="form-control" name="message" id="message" rows="1" placeholder="Message"></textarea>
+                                            <textarea class="form-control" name="message" id="message" rows="1" placeholder="Nội dung bình luận"></textarea>
                                         </div>
                                     </div>
                                     <div class="col-md-12 text-right">
-                                        <button type="submit" value="submit" class="btn primary-btn">Submit Now</button>
+                                        <button type="submit" value="submit" class="btn primary-btn">Gửi bình luận</button>
                                     </div>
                                 </form>
                             </div>

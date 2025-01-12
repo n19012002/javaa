@@ -13,7 +13,7 @@
     <div class="sidebar-body">
         <ul class="nav">
             <li class="nav-item">
-                <a href="${pageContext.request.contextPath}/admin" class="nav-link">
+                <a href="${pageContext.request.contextPath}/admin/dashboard" class="nav-link">
                     <i class="fas fa-home"></i>
                     <span>Trang chủ</span>
                 </a>

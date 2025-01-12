@@ -9,12 +9,21 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
 import dal.ProductDAO;
+import dal.CommentDAO;
 import model.Product;
+import model.CommentProduct;
 
 @WebServlet("/ProductServlet")
 public class ProductServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
     private static final int PAGE_SIZE = 6;
+    private ProductDAO productDAO;
+    private CommentDAO commentDAO;
+
+    public void init() {
+        productDAO = new ProductDAO();
+        commentDAO = new CommentDAO();
+    }
 
     public ProductServlet() {
         super();
@@ -60,5 +69,31 @@ public class ProductServlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         doGet(request, response);
+    }
+
+    private void showProductDetail(HttpServletRequest request, HttpServletResponse response) 
+            throws ServletException, IOException {
+        try {
+            int productId = Integer.parseInt(request.getParameter("id"));
+            Product product = productDAO.getProductById(productId);
+            
+            if (product != null) {
+                // Get product category name
+                String categoryName = productDAO.getCategoryNameById(product.getCategoryId());
+                request.setAttribute("categoryName", categoryName);
+                
+                // Get product comments
+                List<CommentProduct> comments = commentDAO.getCommentsByProductId(productId);
+                request.setAttribute("comments", comments);
+                
+                request.setAttribute("product", product);
+                request.getRequestDispatcher("/views/home/shops/detail.jsp").forward(request, response);
+            } else {
+                response.sendRedirect(request.getContextPath() + "/ProductServlet");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            response.sendRedirect(request.getContextPath() + "/ProductServlet");
+        }
     }
 }

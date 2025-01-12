@@ -53,8 +53,8 @@
                         <div class="f-icon">
                             <img src="${pageContext.request.contextPath}/static/img/features/f-icon1.png" alt="">
                         </div>
-                        <h6>Free Delivery</h6>
-                        <p>Free Shipping on all order</p>
+                        <h6>Miễn phí vận chuyển</h6>
+                        <p>Miễn phí vận chuyển cho mọi đơn hàng</p>
                     </div>
                 </div>
                 <!-- single features -->
@@ -63,8 +63,8 @@
                         <div class="f-icon">
                             <img src="${pageContext.request.contextPath}/static/img/features/f-icon2.png" alt="">
                         </div>
-                        <h6>Return Policy</h6>
-                        <p>Free Shipping on all order</p>
+                        <h6>Chính sách đổi trả</h6>
+                        <p>Đổi trả trong vòng 30 ngày</p>
                     </div>
                 </div>
                 <!-- single features -->
@@ -73,8 +73,8 @@
                         <div class="f-icon">
                             <img src="${pageContext.request.contextPath}/static/img/features/f-icon3.png" alt="">
                         </div>
-                        <h6>24/7 Support</h6>
-                        <p>Free Shipping on all order</p>
+                        <h6>Hỗ trợ 24/7</h6>
+                        <p>Luôn sẵn sàng hỗ trợ</p>
                     </div>
                 </div>
                 <!-- single features -->
@@ -83,8 +83,8 @@
                         <div class="f-icon">
                             <img src="${pageContext.request.contextPath}/static/img/features/f-icon4.png" alt="">
                         </div>
-                        <h6>Secure Payment</h6>
-                        <p>Free Shipping on all order</p>
+                        <h6>Thanh toán an toàn</h6>
+                        <p>Bảo mật thông tin thanh toán</p>
                     </div>
                 </div>
             </div>
@@ -104,7 +104,7 @@
                                 <img class="img-fluid w-100" src="${pageContext.request.contextPath}/static/img/category/c1.jpg" alt="">
                                 <a href="${pageContext.request.contextPath}/static/img/category/c1.jpg" class="img-pop-up" target="_blank">
                                     <div class="deal-details">
-                                        <h6 class="deal-title">Sneaker for Sports</h6>
+                                        <h6 class="deal-title">Giày thể thao</h6>
                                     </div>
                                 </a>
                             </div>
@@ -115,7 +115,7 @@
                                 <img class="img-fluid w-100" src="${pageContext.request.contextPath}/static/img/category/c2.jpg" alt="">
                                 <a href="${pageContext.request.contextPath}/static/img/category/c2.jpg" class="img-pop-up" target="_blank">
                                     <div class="deal-details">
-                                        <h6 class="deal-title">Sneaker for Sports</h6>
+                                        <h6 class="deal-title">Giày thể thao</h6>
                                     </div>
                                 </a>
                             </div>
@@ -126,7 +126,7 @@
                                 <img class="img-fluid w-100" src="${pageContext.request.contextPath}/static/img/category/c3.jpg" alt="">
                                 <a href="${pageContext.request.contextPath}/static/img/category/c3.jpg" class="img-pop-up" target="_blank">
                                     <div class="deal-details">
-                                        <h6 class="deal-title">Product for Couple</h6>
+                                        <h6 class="deal-title">Sản phẩm cho cặp đôi</h6>
                                     </div>
                                 </a>
                             </div>
@@ -137,7 +137,7 @@
                                 <img class="img-fluid w-100" src="${pageContext.request.contextPath}/static/img/category/c4.jpg" alt="">
                                 <a href="${pageContext.request.contextPath}/static/img/category/c4.jpg" class="img-pop-up" target="_blank">
                                     <div class="deal-details">
-                                        <h6 class="deal-title">Sneaker for Sports</h6>
+                                        <h6 class="deal-title">Giày thể thao</h6>
                                     </div>
                                 </a>
                             </div>
@@ -150,7 +150,7 @@
                         <img class="img-fluid w-100" src="${pageContext.request.contextPath}/static/img/category/c5.jpg" alt="">
                         <a href="${pageContext.request.contextPath}/static/img/category/c5.jpg" class="img-pop-up" target="_blank">
                             <div class="deal-details">
-                                <h6 class="deal-title">Sneaker for Sports</h6>
+                                <h6 class="deal-title">Giày thể thao</h6>
                             </div>
                         </a>
                     </div>
@@ -168,9 +168,8 @@
                 <div class="row justify-content-center">
                     <div class="col-lg-6 text-center">
                         <div class="section-title">
-                            <h1>Latest Products</h1>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                                dolore magna aliqua.</p>
+                            <h1>Sản phẩm mới nhất</h1>
+                            <p>Khám phá những mẫu giày mới nhất với thiết kế độc đáo và chất lượng hàng đầu.</p>
                         </div>
                     </div>
                 </div>
@@ -187,8 +186,8 @@
                             <div class="product-details">
                                 <h6><%= product.getName() %></h6>
                                 <div class="price">
-                                    <h6>$<%= product.getPrice() %></h6>
-                                    <h6 class="l-through">$<%= product.getDiscountPrice() %></h6>
+                                    <h6><%= String.format("%,.0fđ", product.getPrice()) %></h6>
+                                    <h6 class="l-through"><%= String.format("%,.0fđ", product.getDiscountPrice()) %></h6>
                                 </div>
                                 <div class="prd-bottom">
                                     <a href="javascript:void(0)" onclick="addToCart(<%= product.getId() %>, <%= product.getPrice() %>)" class="social-info">
@@ -197,15 +196,15 @@
                                     </a>
                                     <a href="" class="social-info">
                                         <span class="lnr lnr-heart"></span>
-                                        <p class="hover-text">Wishlist</p>
+                                        <p class="hover-text">yêu thích</p>
                                     </a>
                                     <a href="" class="social-info">
                                         <span class="lnr lnr-sync"></span>
-                                        <p class="hover-text">compare</p>
+                                        <p class="hover-text">so sánh</p>
                                     </a>
                                     <a href="DetailProductServlet?productId=<%= product.getId() %>" class="social-info">
                                         <span class="lnr lnr-move"></span>
-                                        <p class="hover-text">view more</p>
+                                        <p class="hover-text">xem thêm</p>
                                     </a>
                                 </div>
                             </div>
@@ -228,31 +227,31 @@
                 <div class="col-lg-6 no-padding exclusive-left">
                     <div class="row clock_sec clockdiv" id="clockdiv">
                         <div class="col-lg-12">
-                            <h1>Exclusive Hot Deal Ends Soon!</h1>
-                            <p>Who are in extremely love with eco friendly system.</p>
+                            <h1>Ưu đãi độc quyền sắp kết thúc!</h1>
+                            <p>Dành cho những người yêu thích phong cách thời trang.</p>
                         </div>
                         <div class="col-lg-12">
                             <div class="row clock-wrap">
                                 <div class="col clockinner1 clockinner">
                                     <h1 class="days">150</h1>
-                                    <span class="smalltext">Days</span>
+                                    <span class="smalltext">Ngày</span>
                                 </div>
                                 <div class="col clockinner clockinner1">
                                     <h1 class="hours">23</h1>
-                                    <span class="smalltext">Hours</span>
+                                    <span class="smalltext">Giờ</span>
                                 </div>
                                 <div class="col clockinner clockinner1">
                                     <h1 class="minutes">47</h1>
-                                    <span class="smalltext">Mins</span>
+                                    <span class="smalltext">Phút</span>
                                 </div>
                                 <div class="col clockinner clockinner1">
                                     <h1 class="seconds">59</h1>
-                                    <span class="smalltext">Secs</span>
+                                    <span class="smalltext">Giây</span>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <a href="" class="primary-btn">Shop Now</a>
+                    <a href="" class="primary-btn">Mua ngay</a>
                 </div>
                 <div class="col-lg-6 no-padding exclusive-right">
                     <div class="active-exclusive-product-slider">
@@ -261,14 +260,14 @@
                             <img class="img-fluid" src="${pageContext.request.contextPath}/static/img/product/e-p1.png" alt="">
                             <div class="product-details">
                                 <div class="price">
-                                    <h6>$150.00</h6>
-                                    <h6 class="l-through">$210.00</h6>
+                                    <h6>3.750.000đ</h6>
+                                    <h6 class="l-through">5.250.000đ</h6>
                                 </div>
-                                <h4>addidas New Hammer sole
-                                    for Sports person</h4>
+                                <h4>Giày thể thao Adidas đế mới
+                                    dành cho người chơi thể thao</h4>
                                 <div class="add-bag d-flex align-items-center justify-content-center">
                                     <a class="add-btn" href=""><span class="ti-bag"></span></a>
-                                    <span class="add-text text-uppercase">Add to Bag</span>
+                                    <span class="add-text text-uppercase">Thêm vào giỏ</span>
                                 </div>
                             </div>
                         </div>
@@ -277,14 +276,14 @@
                             <img class="img-fluid" src="${pageContext.request.contextPath}/static/img/product/e-p1.png" alt="">
                             <div class="product-details">
                                 <div class="price">
-                                    <h6>$150.00</h6>
-                                    <h6 class="l-through">$210.00</h6>
+                                    <h6>3.750.000đ</h6>
+                                    <h6 class="l-through">5.250.000đ</h6>
                                 </div>
-                                <h4>addidas New Hammer sole
-                                    for Sports person</h4>
+                                <h4>Giày thể thao Adidas đế mới
+                                    dành cho người chơi thể thao</h4>
                                 <div class="add-bag d-flex align-items-center justify-content-center">
                                     <a class="add-btn" href=""><span class="ti-bag"></span></a>
-                                    <span class="add-text text-uppercase">Add to Bag</span>
+                                    <span class="add-text text-uppercase">Thêm vào giỏ</span>
                                 </div>
                             </div>
                         </div>

@@ -17,7 +17,7 @@
 %>
 
 <!DOCTYPE html>
-<html lang="zxx" class="no-js">
+<html lang="vi" class="no-js">
 <head>
     <!-- Meta tags and CSS links -->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -26,29 +26,33 @@
     <meta name="description" content="">
     <meta name="keywords" content="">
     <meta charset="UTF-8">
-    <title>Karma Shop</title>
+    <title>Cửa hàng giày</title>
+    <!-- CSS -->
     <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/linearicons.css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/owl.carousel.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/font-awesome.min.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/themify-icons.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/bootstrap.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/owl.carousel.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/nice-select.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/nouislider.min.css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/bootstrap.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/ion.rangeSlider.css" />
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/ion.rangeSlider.skinFlat.css" />
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/magnific-popup.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/main.css">
 </head>
+
 <body id="category">
     <%@ include file="/views/home/includes/menu.jsp" %>
-
+    
     <!-- Start Banner Area -->
     <section class="banner-area organic-breadcrumb">
         <div class="container">
             <div class="breadcrumb-banner d-flex flex-wrap align-items-center justify-content-end">
                 <div class="col-first">
-                    <h1>Shop Category page</h1>
+                    <h1>Cửa hàng</h1>
                     <nav class="d-flex align-items-center">
-                        <a href="index.html">Home<span class="lnr lnr-arrow-right"></span></a>
-                        <a href="#">Shop<span class="lnr lnr-arrow-right"></span></a>
-                        <a href="category.html">Fashon Category</a>
+                        <a href="${pageContext.request.contextPath}/home">Trang chủ<span class="lnr lnr-arrow-right"></span></a>
+                        <a href="#">Cửa hàng</a>
                     </nav>
                 </div>
             </div>
@@ -60,15 +64,14 @@
         <div class="row">
             <div class="col-xl-3 col-lg-4 col-md-5">
                 <div class="sidebar-categories">
-                    <div class="head">Browse Categories</div>
+                    <div class="head">Danh mục sản phẩm</div>
                     <ul class="main-categories">
-                        <li class="main-nav-list"><a href="ProductServlet">All products</a></li>
+                        <li class="main-nav-list"><a href="ProductServlet">Tất cả sản phẩm</a></li>
                         
                         <%
                             for (ProductCategory category : categories) {
                         %>
                         <li class="main-nav-list">
-                            
                             <a href="ProductServlet?categoryId=<%= category.getId() %><%= selectedBrandId != null ? "&brandId=" + selectedBrandId : "" %><%= minPrice != null ? "&minPrice=" + minPrice : "" %><%= maxPrice != null ? "&maxPrice=" + maxPrice : "" %>">
                                 <%= category.getName() %> (<%= category.getProductCount() %>)
                             </a>
@@ -79,16 +82,16 @@
                     </ul>
                 </div>
                 <div class="sidebar-filter mt-50">
-                    <div class="top-filter-head">Product Filters</div>
+                    <div class="top-filter-head">Bộ lọc sản phẩm</div>
                     <div class="common-filter">
-                        <div class="head">Brands</div>
+                        <div class="head">Thương hiệu</div>
                         <form id="brandForm" action="ProductServlet" method="get">
                             <ul>
-                                <li class="filter-list"><input class="pixel-radio" type="radio" id="apple" name="brandId" value="1" <%= "1".equals(selectedBrandId) ? "checked" : "" %>><label for="apple">Apple</label></li>
-                                <li class="filter-list"><input class="pixel-radio" type="radio" id="asus" name="brandId" value="2" <%= "2".equals(selectedBrandId) ? "checked" : "" %>><label for="asus">Asus</label></li>
-                                <li class="filter-list"><input class="pixel-radio" type="radio" id="gionee" name="brandId" value="3" <%= "3".equals(selectedBrandId) ? "checked" : "" %>><label for="gionee">Gionee</label></li>
-                                <li class="filter-list"><input class="pixel-radio" type="radio" id="micromax" name="brandId" value="4" <%= "4".equals(selectedBrandId) ? "checked" : "" %>><label for="micromax">Micromax</label></li>
-                                <li class="filter-list"><input class="pixel-radio" type="radio" id="samsung" name="brandId" value="5" <%= "5".equals(selectedBrandId) ? "checked" : "" %>><label for="samsung">Samsung</label></li>
+                                <li class="filter-list"><input class="pixel-radio" type="radio" id="nike" name="brandId" value="1" <%= "1".equals(selectedBrandId) ? "checked" : "" %>><label for="nike">Nike</label></li>
+                                <li class="filter-list"><input class="pixel-radio" type="radio" id="adidas" name="brandId" value="2" <%= "2".equals(selectedBrandId) ? "checked" : "" %>><label for="adidas">Adidas</label></li>
+                                <li class="filter-list"><input class="pixel-radio" type="radio" id="puma" name="brandId" value="3" <%= "3".equals(selectedBrandId) ? "checked" : "" %>><label for="puma">Puma</label></li>
+                                <li class="filter-list"><input class="pixel-radio" type="radio" id="converse" name="brandId" value="4" <%= "4".equals(selectedBrandId) ? "checked" : "" %>><label for="converse">Converse</label></li>
+                                <li class="filter-list"><input class="pixel-radio" type="radio" id="vans" name="brandId" value="5" <%= "5".equals(selectedBrandId) ? "checked" : "" %>><label for="vans">Vans</label></li>
                             </ul>
                             <% if (selectedCategoryId != null && !selectedCategoryId.isEmpty()) { %>
                                 <input type="hidden" name="categoryId" value="<%= selectedCategoryId %>">
@@ -102,16 +105,15 @@
                         </form>
                     </div>
                     <div class="common-filter">
-                        <div class="head">Price</div>
+                        <div class="head">Khoảng giá</div>
                         <div class="price-range-area">
                             <div id="price-range"></div>
                             <div class="value-wrapper d-flex">
-                                <div class="price">Price:</div>
-                                <span>$</span>
-                                <div id="lower-value"><%= minPrice != null ? minPrice : "0" %></div>
-                                <div class="to">to</div>
-                                <span>$</span>
-                                <div id="upper-value"><%= maxPrice != null ? maxPrice : "1000" %></div>
+                                <div class="price">Giá:</div>
+                                <div id="lower-value"><%= minPrice != null ? String.format("%,.0f", Double.parseDouble(minPrice)) : "0" %></div>
+                                <div class="to">đ���n</div>
+                                <div id="upper-value"><%= maxPrice != null ? String.format("%,.0f", Double.parseDouble(maxPrice)) : "25.000.000" %></div>
+                                <div>đ</div>
                             </div>
                         </div>
                     </div>
@@ -122,16 +124,16 @@
                 <div class="filter-bar d-flex flex-wrap align-items-center">
                     <div class="sorting">
                         <select>
-                            <option value="1">Default sorting</option>
-                            <option value="1">Default sorting</option>
-                            <option value="1">Default sorting</option>
+                            <option value="1">Sắp xếp mặc định</option>
+                            <option value="2">Giá tăng dần</option>
+                            <option value="3">Giá giảm dần</option>
                         </select>
                     </div>
                     <div class="sorting mr-auto">
                         <select>
-                            <option value="1">Show 12</option>
-                            <option value="1">Show 12</option>
-                            <option value="1">Show 12</option>
+                            <option value="12">Hiển thị 12</option>
+                            <option value="24">Hiển thị 24</option>
+                            <option value="48">Hiển thị 48</option>
                         </select>
                     </div>
                     <div class="pagination">
@@ -174,8 +176,8 @@
                                 <div class="product-details">
                                     <h6><%= product.getName() %></h6>
                                     <div class="price">
-                                        <h6>$<%= product.getPrice() %></h6>
-                                        <h6 class="l-through">$<%= product.getDiscountPrice() %></h6>
+                                        <h6><%= String.format("%,.0fđ", product.getPrice()) %></h6>
+                                        <h6 class="l-through"><%= String.format("%,.0fđ", product.getDiscountPrice()) %></h6>
                                     </div>
                                     <div class="prd-bottom">
                                         <a href="javascript:void(0)" onclick="addToCart(<%= product.getId() %>, <%= product.getPrice() %>)" class="social-info">
@@ -184,15 +186,15 @@
                                         </a>
                                         <a href="" class="social-info">
                                             <span class="lnr lnr-heart"></span>
-                                            <p class="hover-text">Wishlist</p>
+                                            <p class="hover-text">yêu thích</p>
                                         </a>
                                         <a href="" class="social-info">
                                             <span class="lnr lnr-sync"></span>
-                                            <p class="hover-text">compare</p>
+                                            <p class="hover-text">so sánh</p>
                                         </a>
                                         <a href="DetailProductServlet?productId=<%= product.getId() %>" class="social-info">
                                             <span class="lnr lnr-move"></span>
-                                            <p class="hover-text">view more</p>
+                                            <p class="hover-text">xem thêm</p>
                                         </a>
                                     </div>
                                 </div>
@@ -210,9 +212,9 @@
                 <div class="filter-bar d-flex flex-wrap align-items-center">
                     <div class="sorting mr-auto">
                         <select>
-                            <option value="1">Show 12</option>
-                            <option value="1">Show 12</option>
-                            <option value="1">Show 12</option>
+                            <option value="12">Hiển thị 12</option>
+                            <option value="24">Hiển thị 24</option>
+                            <option value="48">Hiển thị 48</option>
                         </select>
                     </div>
                     <div class="pagination">
@@ -275,21 +277,21 @@
             var priceRange = document.getElementById('price-range');
             if (priceRange) {
                 noUiSlider.create(priceRange, {
-                    start: [<%= minPrice != null ? minPrice : "0" %>, <%= maxPrice != null ? maxPrice : "1000" %>],
-                    step: 10,
+                    start: [<%= minPrice != null ? minPrice : "0" %>, <%= maxPrice != null ? maxPrice : "25000000" %>],
+                    step: 100000,
                     connect: true,
                     range: {
                         'min': 0,
-                        'max': 1000
+                        'max': 25000000
                     }
                 });
 
                 priceRange.noUiSlider.on('update', function(values, handle) {
                     var value = values[handle];
                     if (handle) {
-                        $('#upper-value').text(Math.round(value));
+                        $('#upper-value').text(new Intl.NumberFormat('vi-VN').format(Math.round(value)));
                     } else {
-                        $('#lower-value').text(Math.round(value));
+                        $('#lower-value').text(new Intl.NumberFormat('vi-VN').format(Math.round(value)));
                     }
                 });
 
