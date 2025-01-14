@@ -78,11 +78,11 @@ public class ProductServlet extends HttpServlet {
             Product product = productDAO.getProductById(productId);
             
             if (product != null) {
-                // Get product category name
+              
                 String categoryName = productDAO.getCategoryNameById(product.getCategoryId());
                 request.setAttribute("categoryName", categoryName);
                 
-                // Get product comments
+
                 List<CommentProduct> comments = commentDAO.getCommentsByProductId(productId);
                 request.setAttribute("comments", comments);
                 

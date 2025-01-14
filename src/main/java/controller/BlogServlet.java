@@ -27,7 +27,7 @@ public class BlogServlet extends HttpServlet {
         super.init();
         PostDAO postDAO = new PostDAO();
         try {
-            List<Post> allPosts = postDAO.getPosts(1, Integer.MAX_VALUE); // Lấy tất cả các bài viết
+            List<Post> allPosts = postDAO.getPosts(1, Integer.MAX_VALUE); 
             getServletContext().setAttribute("allPosts", allPosts);
         } catch (SQLException e) {
             e.printStackTrace();

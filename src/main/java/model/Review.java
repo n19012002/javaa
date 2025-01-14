@@ -8,8 +8,11 @@ public class Review {
     private int rating;
     private String comment;
     private Timestamp createdAt;
+    private String authorName;
 
-    // Getters and Setters
+    public Review() {
+    }
+
     public int getId() {
         return id;
     }
@@ -50,9 +53,11 @@ public class Review {
         this.createdAt = createdAt;
     }
 
-	@Override
-	public String toString() {
-		return "Review [id=" + id + ", productId=" + productId + ", rating=" + rating + ", comment=" + comment
-				+ ", createdAt=" + createdAt + "]";
-	}
+    public String getAuthorName() {
+        return authorName;
+    }
+
+    public void setAuthorName(String authorName) {
+        this.authorName = authorName;
+    }
 }

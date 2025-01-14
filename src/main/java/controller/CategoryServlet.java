@@ -25,7 +25,7 @@ public class CategoryServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String idParam = request.getParameter("id");
         if (idParam == null) {
-            response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Category ID is missing");
+            response.sendError(HttpServletResponse.SC_BAD_REQUEST, "ko tai id");
             return;
         }
 
@@ -33,7 +33,7 @@ public class CategoryServlet extends HttpServlet {
         try {
             categoryId = Integer.parseInt(idParam);
         } catch (NumberFormatException e) {
-            response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Invalid Category ID");
+            response.sendError(HttpServletResponse.SC_BAD_REQUEST, "lỗi ID");
             return;
         }
 
@@ -42,7 +42,7 @@ public class CategoryServlet extends HttpServlet {
             try {
                 page = Integer.parseInt(request.getParameter("page"));
             } catch (NumberFormatException e) {
-                response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Invalid page number");
+                response.sendError(HttpServletResponse.SC_BAD_REQUEST, "ko co gia tri page");
                 return;
             }
         }
@@ -61,7 +61,7 @@ public class CategoryServlet extends HttpServlet {
             request.setAttribute("categories", categories);
         } catch (SQLException e) {
             e.printStackTrace();
-            response.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "Database error");
+            response.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "loi db");
             return;
         }
         request.getRequestDispatcher("/views/home/blogs/index.jsp").forward(request, response);

@@ -42,7 +42,7 @@ public class UserDao {
         }
     }
 
-    // Thêm phương thức cập nhật thông tin người dùng
+   
     public void updateUser(User user) throws SQLException {
         String sql = "UPDATE users SET fullname=?, email=?, phone=?, address=? WHERE id=?";
         
@@ -59,7 +59,7 @@ public class UserDao {
         }
     }
     
-    // Thêm phương thức cập nhật mật khẩu
+   
     public void updatePassword(User user) throws SQLException {
         String sql = "UPDATE users SET password=? WHERE id=?";
         
@@ -73,7 +73,7 @@ public class UserDao {
         }
     }
     
-    // Thêm phương thức lấy thông tin người dùng theo ID
+    
     public User getUserById(int id) throws SQLException {
         String sql = "SELECT * FROM users WHERE id=?";
         
@@ -99,7 +99,7 @@ public class UserDao {
         return null;
     }
     
-    // Kiểm tra username đã tồn tại
+   
     public boolean checkUsernameExists(String username) throws SQLException {
         String query = "SELECT COUNT(*) FROM users WHERE username = ?";
         try (Connection conn = DBContext.getConnection();
@@ -114,7 +114,7 @@ public class UserDao {
         return false;
     }
     
-    // Kiểm tra email đã tồn tại
+  
     public boolean checkEmailExists(String email) throws SQLException {
         String query = "SELECT COUNT(*) FROM users WHERE email = ?";
         try (Connection conn = DBContext.getConnection();
@@ -129,7 +129,7 @@ public class UserDao {
         return false;
     }
     
-    // Đăng ký người dùng mới
+   
     public boolean register(User user) throws SQLException {
         String insertUser = "INSERT INTO users (username, password, email, fullname, phone, address, status) " +
                           "VALUES (?, MD5(?), ?, ?, ?, ?, ?)";
@@ -144,7 +144,7 @@ public class UserDao {
             conn = DBContext.getConnection();
             conn.setAutoCommit(false);
             
-            // Thêm user
+            
             psUser = conn.prepareStatement(insertUser, Statement.RETURN_GENERATED_KEYS);
             psUser.setString(1, user.getUsername());
             psUser.setString(2, user.getPassword()); // MySQL sẽ tự mã hóa MD5
@@ -157,7 +157,7 @@ public class UserDao {
             int affectedRows = psUser.executeUpdate();
             
             if (affectedRows > 0) {
-                // Lấy id của user vừa thêm
+                
                 try (ResultSet generatedKeys = psUser.getGeneratedKeys()) {
                     if (generatedKeys.next()) {
                         int userId = generatedKeys.getInt(1);

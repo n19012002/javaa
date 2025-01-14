@@ -99,277 +99,131 @@
     <!--================Product Description Area =================-->
     <section class="product_description_area">
         <div class="container">
-            <ul class="nav nav-tabs" id="myTab" role="tablist">
-                <li class="nav-item">
-                    <a class="nav-link" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Mô tả</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile"
-                        aria-selected="false">Thông số kỹ thuật</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact"
-                        aria-selected="false">Bình luận</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" id="review-tab" data-toggle="tab" href="#review" role="tab" aria-controls="review"
-                        aria-selected="false">Đánh giá</a>
-                </li>
-            </ul>
-            <div class="tab-content" id="myTabContent">
-                <div class="tab-pane fade" id="home" role="tabpanel" aria-labelledby="home-tab">
+            <div class="nav-tabs-wrapper">
+                <ul class="nav nav-tabs" role="tablist">
+                    <li class="nav-item">
+                        <button class="nav-link" onclick="openTab('description', event)">Mô tả</button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link" onclick="openTab('specification', event)">Thông số kỹ thuật</button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link active" onclick="openTab('review', event)">Đánh giá</button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link" onclick="openTab('comment', event)">Bình luận</button>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="tab-content">
+                <div id="description" class="tab-pane" style="display: none;">
                     <p>${product.description}</p>
                 </div>
-                <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+
+                <div id="specification" class="tab-pane" style="display: none;">
                     <div class="table-responsive">
                         <table class="table">
                             <tbody>
                                 <tr>
-                                    <td>
-                                        <h5>Chiều rộng</h5>
-                                    </td>
-                                    <td>
-                                        <h5>128mm</h5>
-                                    </td>
+                                    <td><h5>Chiều rộng</h5></td>
+                                    <td><h5>128mm</h5></td>
                                 </tr>
                                 <tr>
-                                    <td>
-                                        <h5>Chiều cao</h5>
-                                    </td>
-                                    <td>
-                                        <h5>508mm</h5>
-                                    </td>
+                                    <td><h5>Chiều cao</h5></td>
+                                    <td><h5>508mm</h5></td>
                                 </tr>
                                 <tr>
-                                    <td>
-                                        <h5>Chiều sâu</h5>
-                                    </td>
-                                    <td>
-                                        <h5>85mm</h5>
-                                    </td>
+                                    <td><h5>Chiều sâu</h5></td>
+                                    <td><h5>85mm</h5></td>
                                 </tr>
                                 <tr>
-                                    <td>
-                                        <h5>Trọng lượng</h5>
-                                    </td>
-                                    <td>
-                                        <h5>52g</h5>
-                                    </td>
+                                    <td><h5>Trọng lượng</h5></td>
+                                    <td><h5>52g</h5></td>
                                 </tr>
                                 <tr>
-                                    <td>
-                                        <h5>Kiểm tra chất lượng</h5>
-                                    </td>
-                                    <td>
-                                        <h5>Có</h5>
-                                    </td>
+                                    <td><h5>Kiểm tra chất lượng</h5></td>
+                                    <td><h5>Có</h5></td>
                                 </tr>
                                 <tr>
-                                    <td>
-                                        <h5>Thời gian bảo hành</h5>
-                                    </td>
-                                    <td>
-                                        <h5>12 tháng</h5>
-                                    </td>
+                                    <td><h5>Thời gian bảo hành</h5></td>
+                                    <td><h5>12 tháng</h5></td>
                                 </tr>
                                 <tr>
-                                    <td>
-                                        <h5>Đóng gói</h5>
-                                    </td>
-                                    <td>
-                                        <h5>Hộp carton</h5>
-                                    </td>
+                                    <td><h5>Đóng gói</h5></td>
+                                    <td><h5>Hộp carton</h5></td>
                                 </tr>
                                 <tr>
-                                    <td>
-                                        <h5>Phụ kiện kèm theo</h5>
-                                    </td>
-                                    <td>
-                                        <h5>Hộp, sách hướng dẫn</h5>
-                                    </td>
+                                    <td><h5>Phụ kiện kèm theo</h5></td>
+                                    <td><h5>Hộp, sách hướng dẫn</h5></td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
                 </div>
-                <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-                            <!-- Vòng lặp để hiển thị từng bình luận -->
-                            <div class="comment_list">
-                                <c:forEach var="comment" items="${comments}">
-                                    <div class="review_item">
-                                        <div class="media">
-                                            <div class="d-flex">
-                                                <img src="${pageContext.request.contextPath}/static/img/product/review-1.png" alt="">
-                                            </div>
-                                            <div class="media-body">
-                                                <h4>${comment.authorName}</h4>
-                                                <h5>${comment.createdAt}</h5>
-                                                <a class="reply_btn" href="#">Trả lời</a>
-                                            </div>
-                                        </div>
-                                        <p>${comment.content}</p>
-                                    </div>
-                                </c:forEach>
-                            </div>
-                        </div>
-                        <div class="col-lg-6">
-                            <div class="review_box">
-                                <h4>Viết bình luận</h4>
-                                <form class="row contact_form" action="contact_process.php" method="post" id="contactForm" novalidate="novalidate">
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" id="name" name="name" placeholder="Họ và tên">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <input type="email" class="form-control" id="email" name="email" placeholder="Địa chỉ email">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" id="number" name="number" placeholder="Số điện thoại">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <textarea class="form-control" name="message" id="message" rows="1" placeholder="Nội dung bình luận"></textarea>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12 text-right">
-                                        <button type="submit" value="submit" class="btn primary-btn">Gửi bình luận</button>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
+
+                <div id="review" class="tab-pane" style="display: block;">
+                    <%@ include file="review.jsp" %>
                 </div>
-                <div class="tab-pane fade show active" id="review" role="tabpanel" aria-labelledby="review-tab">
+
+                <div id="comment" class="tab-pane" style="display: none;">
                     <div class="row">
-						<div class="col-lg-6">
-							<div class="row total_rate">
-								<div class="col-6">
-									<div class="box_total">
-										<h5>Overall</h5>
-										<h4>4.0</h4>
-										<h6>(03 Reviews)</h6>
-									</div>
-								</div>
-								<div class="col-6">
-									<div class="rating_list">
-										<h3>Based on 3 Reviews</h3>
-										<ul class="list">
-											<li><a href="#">5 Star <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i
-													 class="fa fa-star"></i><i class="fa fa-star"></i> 01</a></li>
-											<li><a href="#">4 Star <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i
-													 class="fa fa-star"></i><i class="fa fa-star"></i> 01</a></li>
-											<li><a href="#">3 Star <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i
-													 class="fa fa-star"></i><i class="fa fa-star"></i> 01</a></li>
-											<li><a href="#">2 Star <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i
-													 class="fa fa-star"></i><i class="fa fa-star"></i> 01</a></li>
-											<li><a href="#">1 Star <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i
-													 class="fa fa-star"></i><i class="fa fa-star"></i> 01</a></li>
-										</ul>
-									</div>
-								</div>
-							</div>
-							<!-- <div class="review_list">
-								<div class="review_item">
-									<div class="media">
-										<div class="d-flex">
-											<img src="img/product/review-1.png" alt="">
-										</div>
-										<div class="media-body">
-											<h4>Blake Ruiz</h4>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-										</div>
-									</div>
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-										dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-										commodo</p>
-								</div>
-								<div class="review_item">
-									<div class="media">
-										<div class="d-flex">
-											<img src="img/product/review-2.png" alt="">
-										</div>
-										<div class="media-body">
-											<h4>Blake Ruiz</h4>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-										</div>
-									</div>
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-										dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-										commodo</p>
-								</div>
-								<div class="review_item">
-									<div class="media">
-										<div class="d-flex">
-											<img src="img/product/review-3.png" alt="">
-										</div>
-										<div class="media-body">
-											<h4>Blake Ruiz</h4>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-										</div>
-									</div>
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-										dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-										commodo</p>
-								</div>
-							</div> -->
-						</div>
-                        <div class="col-lg-6">
-                            <div class="review_box">
-                                <h4>Add a Review</h4>
-                                <p>Your Rating:</p>
-                                <ul class="list">
-                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                </ul>
-                                <p>Outstanding</p>
-                                <form class="row contact_form" action="contact_process.php" method="post" id="contactForm" novalidate="novalidate">
-                                    <div class="col-md-12">
+                        <div class="col-lg-12">
+                            <div class="comment-section">
+                                <!-- Form bình luận -->
+                                <div class="comment-form mb-5">
+                                    <div class="section-title">
+                                        <h4>Viết bình luận</h4>
+                                        <div class="title-line"></div>
+                                    </div>
+                                    <form id="commentForm" class="mt-4">
+                                        <input type="hidden" name="productId" value="${product.id}">
                                         <div class="form-group">
-                                            <input type="text" class="form-control" id="name" name="name" placeholder="Your Full name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your Full name'">
+                                            <div class="input-group">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                                <input type="text" class="form-control" id="authorName" name="authorName" 
+                                                    placeholder="Tên của bạn" required>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-md-12">
                                         <div class="form-group">
-                                            <input type="email" class="form-control" id="email" name="email" placeholder="Email Address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email Address'">
+                                            <div class="input-group">
+                                                <span class="input-group-text"><i class="fa fa-comment"></i></span>
+                                                <textarea class="form-control" id="content" name="content" rows="4" 
+                                                    placeholder="Chia sẻ suy nghĩ của bạn về sản phẩm..." required></textarea>
+                                            </div>
                                         </div>
+                                        <button type="submit" class="primary-btn">
+                                            <i class="fa fa-paper-plane"></i> Gửi bình luận
+                                        </button>
+                                    </form>
+                                </div>
+
+                                <!-- Danh sách bình luận -->
+                                <div class="comments-list">
+                                    <div class="section-title">
+                                        <h4>Bình luận (${comments.size()})</h4>
+                                        <div class="title-line"></div>
                                     </div>
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" id="number" name="number" placeholder="Phone Number" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Phone Number'">
+                                    <c:forEach items="${comments}" var="comment">
+                                        <div class="single-comment">
+                                            <div class="comment-header">
+                                                <div class="user-avatar">
+                                                    <i class="fa fa-user-circle"></i>
+                                                </div>
+                                                <div class="user-info">
+                                                    <h5>${comment.authorName}</h5>
+                                                    <p class="date">
+                                                        <i class="fa fa-clock-o"></i>
+                                                        <fmt:formatDate value="${comment.createdAt}" pattern="dd/MM/yyyy HH:mm"/>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="comment-body">
+                                                <p class="comment-text">${comment.content}</p>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <textarea class="form-control" name="message" id="message" rows="1" placeholder="Message" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Message'"></textarea>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12 text-right">
-                                        <button type="submit" value="submit" class="btn primary-btn">Submit Now</button>
-                                    </div>
-                                </form>
+                                    </c:forEach>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -466,6 +320,273 @@
     function updateCartCount(count) {
         $('.cart-count').text(count || '0');
     }
+    </script>
+
+    <style>
+    .comment-section {
+        padding: 30px 0;
+    }
+
+    .section-title {
+        margin-bottom: 25px;
+        position: relative;
+    }
+
+    .section-title h4 {
+        color: #333;
+        font-weight: 600;
+        margin-bottom: 10px;
+    }
+
+    .title-line {
+        width: 50px;
+        height: 2px;
+        background: #ff6b6b;
+        margin-bottom: 20px;
+    }
+
+    .comment-form {
+        background: #fff;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .input-group {
+        margin-bottom: 20px;
+    }
+
+    .input-group-text {
+        background: #f8f9fa;
+        border: 1px solid #ced4da;
+        color: #666;
+    }
+
+    .form-control {
+        border: 1px solid #ced4da;
+        padding: 12px;
+        transition: all 0.3s ease;
+    }
+
+    .form-control:focus {
+        border-color: #ff6b6b;
+        box-shadow: 0 0 0 0.2rem rgba(255, 107, 107, 0.25);
+    }
+
+    .primary-btn {
+        background: #ff6b6b;
+        color: #fff;
+        padding: 12px 25px;
+        border: none;
+        border-radius: 5px;
+        transition: all 0.3s ease;
+    }
+
+    .primary-btn:hover {
+        background: #ff5252;
+        transform: translateY(-2px);
+    }
+
+    .primary-btn i {
+        margin-right: 8px;
+    }
+
+    .single-comment {
+        background: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        margin-bottom: 20px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        transition: all 0.3s ease;
+    }
+
+    .single-comment:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .comment-header {
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+    }
+
+    .user-avatar {
+        width: 40px;
+        height: 40px;
+        background: #f8f9fa;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 15px;
+    }
+
+    .user-avatar i {
+        font-size: 24px;
+        color: #666;
+    }
+
+    .user-info h5 {
+        color: #333;
+        font-weight: 600;
+        margin: 0 0 5px 0;
+    }
+
+    .date {
+        color: #888;
+        font-size: 0.85em;
+        margin: 0;
+    }
+
+    .date i {
+        margin-right: 5px;
+    }
+
+    .comment-body {
+        padding-left: 55px;
+    }
+
+    .comment-text {
+        color: #555;
+        line-height: 1.6;
+        margin: 0;
+    }
+
+    /* Animation */
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    .single-comment {
+        animation: fadeIn 0.5s ease-out;
+    }
+
+    .nav-tabs-wrapper {
+        border-bottom: 1px solid #ddd;
+        margin-bottom: 30px;
+    }
+
+    .nav-tabs {
+        border: none;
+        display: flex;
+        gap: 10px;
+    }
+
+    .nav-item {
+        margin: 0;
+    }
+
+    .nav-link {
+        border: none;
+        background: none;
+        color: #777;
+        padding: 15px 25px;
+        font-size: 16px;
+        font-weight: 500;
+        position: relative;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .nav-link:hover {
+        color: #ff6b6b;
+    }
+
+    .nav-link.active {
+        color: #ff6b6b;
+    }
+
+    .nav-link.active:after {
+        content: '';
+        position: absolute;
+        bottom: -1px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background: #ff6b6b;
+    }
+
+    .tab-content {
+        padding: 30px 0;
+    }
+
+    .tab-pane {
+        animation: fadeEffect 0.5s;
+    }
+
+    @keyframes fadeEffect {
+        from {opacity: 0;}
+        to {opacity: 1;}
+    }
+    </style>
+
+    <script type="text/javascript">
+        function openTab(tabName, event) {
+            // Ẩn tất cả các tab
+            var tabPanes = document.getElementsByClassName('tab-pane');
+            for (var i = 0; i < tabPanes.length; i++) {
+                tabPanes[i].style.display = 'none';
+            }
+
+            // Bỏ active tất cả các nút
+            var tabButtons = document.getElementsByClassName('nav-link');
+            for (var i = 0; i < tabButtons.length; i++) {
+                tabButtons[i].classList.remove('active');
+            }
+
+            // Hiển thị tab được chọn
+            document.getElementById(tabName).style.display = 'block';
+            
+            // Active nút được chọn
+            if (event && event.currentTarget) {
+                event.currentTarget.classList.add('active');
+            }
+        }
+
+        // Mặc định hiển thị tab đánh giá
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('review').style.display = 'block';
+            // Active nút đánh giá
+            var reviewButton = document.querySelector('button[onclick*="review"]');
+            if (reviewButton) {
+                reviewButton.classList.add('active');
+            }
+        });
+    </script>
+
+    <script>
+    $(document).ready(function() {
+        $('#commentForm').on('submit', function(e) {
+            e.preventDefault();
+            
+            // Kiểm tra đăng nhập
+            <% if (session.getAttribute("user") == null) { %>
+                if(confirm('Bạn cần đăng nhập để bình luận. Đăng nhập ngay?')) {
+                    window.location.href = '${pageContext.request.contextPath}/login';
+                }
+                return;
+            <% } %>
+            
+            $.ajax({
+                url: '${pageContext.request.contextPath}/comment/add',
+                type: 'POST',
+                data: $(this).serialize(),
+                success: function(response) {
+                    if(response.success) {
+                        alert('Bình luận của bạn đã được gửi thành công!');
+                        location.reload();
+                    } else {
+                        alert('Có lỗi xảy ra: ' + response.message);
+                    }
+                },
+                error: function() {
+                    alert('Có lỗi xảy ra khi gửi bình luận. Vui lòng thử lại sau.');
+                }
+            });
+        });
+    });
     </script>
 </body>
 </html>
